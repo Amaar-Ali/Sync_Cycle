@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { Chrome } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import Footer from '@/components/Footer';
 
 const Login = () => {
   const { signInWithGoogle, signInWithEmail, signUpWithEmail } = useAuth();
@@ -92,12 +93,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 flex items-center justify-center">
-      <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full mx-4">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Period Tracker</h1>
-          <p className="text-gray-600">Track your cycle with confidence</p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 flex flex-col">
+      <div className="flex-grow flex items-center justify-center">
+        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full mx-4">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Period Tracker</h1>
+            <p className="text-gray-600">Track your cycle with confidence</p>
+          </div>
 
         <form onSubmit={handleEmailAuth} className="space-y-4 mb-6">
           {isSignUp && (
@@ -183,6 +185,8 @@ const Login = () => {
           By continuing, you agree to our Terms of Service and Privacy Policy
         </p>
       </div>
+      </div>
+      <Footer />
     </div>
   );
 };

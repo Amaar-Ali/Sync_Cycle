@@ -14,6 +14,7 @@ import { PeriodEntry, CycleData } from '@/types/period';
 import { useToast } from '@/hooks/use-toast';
 import LogViewer from '@/components/LogViewer';
 import ReliefIdeas from '@/components/ReliefIdeas';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const { user, isAdmin, loading } = useAuth();
@@ -171,6 +172,7 @@ const Index = () => {
         <main className="mt-8">
           {renderActiveTab()}
         </main>
+        <Footer />
       </div>
     </div>
   );
