@@ -26,46 +26,47 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
   }
 
   return (
-    <header className="mt-4">
-      <div className="w-full px-4 py-6 bg-gradient-to-r from-pink-50 to-purple-50 border-b border-pink-100 rounded-2xl shadow-lg">
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 leading-tight pb-2" style={{fontFamily: 'Poppins, Nunito, Inter, sans-serif'}}>SyncCycle</h1>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+    <header className="mt-3">
+      <div className="w-100 px-3 px-md-4 py-4 py-md-5 bg-gradient-to-r from-pink-50 to-purple-50 border-bottom border-pink-100 rounded-4 shadow">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-between mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 leading-tight pb-2 mb-3 mb-md-0" style={{fontFamily: 'Poppins, Nunito, Inter, sans-serif'}}>SyncCycle</h1>
+          <div className="d-flex align-items-center gap-3">
+            <div className="d-flex align-items-center gap-2">
               <img 
                 src={user?.photoURL || ''} 
                 alt={user?.displayName || 'User'} 
-                className="w-8 h-8 rounded-full"
+                className="rounded-circle" 
+                style={{width: "32px", height: "32px"}}
               />
-              <span className="text-sm text-gray-600">{user?.displayName}</span>
+              <span className="small text-secondary">{user?.displayName}</span>
             </div>
             <Button
               onClick={logout}
               variant="ghost"
               size="sm"
-              className="flex items-center gap-2"
+              className="d-flex align-items-center gap-2 btn btn-sm btn-light"
             >
               <LogOut className="h-4 w-4" />
               Logout
             </Button>
           </div>
         </div>
-        <nav className="flex justify-center">
-          <div className="flex bg-white rounded-full p-1 shadow-md">
+        <nav className="d-flex justify-content-center overflow-auto">
+          <div className="d-flex bg-white rounded-pill p-1 shadow-sm">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => onTabChange(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 ${
+                  className={`d-flex align-items-center gap-2 px-2 px-md-3 py-2 rounded-pill transition ${
                     activeTab === tab.id
-                      ? 'bg-primary text-primary-foreground shadow-sm'
-                      : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                      ? 'bg-primary text-white shadow-sm'
+                      : 'text-secondary hover:text-dark hover:bg-light'
                   }`}
                 >
-                  <Icon size={18} />
-                  <span className="font-medium">{tab.label}</span>
+                  <Icon size={16} />
+                  <span className="d-none d-md-inline fw-medium">{tab.label}</span>
                 </button>
               );
             })}

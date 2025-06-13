@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -93,98 +92,99 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 flex flex-col">
-      <div className="flex-grow flex items-center justify-center">
-        <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full mx-4">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Period Tracker</h1>
-            <p className="text-gray-600">Track your cycle with confidence</p>
+    <div className="min-vh-100 d-flex flex-column bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
+      <div className="flex-grow-1 d-flex align-items-center justify-content-center">
+        <div className="bg-white rounded-4 shadow p-4 p-md-5 mx-3 mx-md-0" style={{ maxWidth: "450px" }}>
+          <div className="text-center mb-4">
+            <h1 className="fs-2 fw-bold text-dark mb-2">Period Tracker</h1>
+            <p className="text-secondary">Track your cycle with confidence</p>
           </div>
 
-        <form onSubmit={handleEmailAuth} className="space-y-4 mb-6">
-          {isSignUp && (
-            <div>
-              <Label htmlFor="name">Full Name</Label>
+          <form onSubmit={handleEmailAuth} className="mb-4">
+            {isSignUp && (
+              <div className="mb-3">
+                <Label htmlFor="name">Full Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required={isSignUp}
+                  className="form-control"
+                />
+              </div>
+            )}
+            
+            <div className="mb-3">
+              <Label htmlFor="email">Email</Label>
               <Input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Enter your full name"
-                value={formData.name}
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                value={formData.email}
                 onChange={handleInputChange}
-                required={isSignUp}
+                required
+                className="form-control"
               />
             </div>
-          )}
-          
-          <div>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          
-          <div>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
+            
+            <div className="mb-4">
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                className="form-control"
+              />
+            </div>
+
+            <Button 
+              type="submit" 
+              className="w-100 btn btn-primary"
+              disabled={loading}
+            >
+              {loading ? 'Loading...' : (isSignUp ? 'Sign Up' : 'Sign In')}
+            </Button>
+          </form>
+
+          <div className="position-relative mb-4">
+            <hr className="my-4" />
+            <div className="position-absolute top-50 start-50 translate-middle bg-white px-3">
+              <span className="text-secondary small">Or continue with</span>
+            </div>
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full"
+          <Button
+            onClick={handleGoogleSignIn}
+            className="w-100 d-flex align-items-center justify-content-center gap-2 btn btn-outline-secondary"
+            variant="outline"
             disabled={loading}
           >
-            {loading ? 'Loading...' : (isSignUp ? 'Sign Up' : 'Sign In')}
+            <Chrome className="h-5 w-5" />
+            Continue with Google
           </Button>
-        </form>
 
-        <div className="relative mb-6">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-gray-300" />
+          <div className="text-center mt-4">
+            <button
+              type="button"
+              onClick={() => setIsSignUp(!isSignUp)}
+              className="btn btn-link text-decoration-none"
+            >
+              {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+            </button>
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-gray-500">Or continue with</span>
-          </div>
+
+          <p className="small text-secondary text-center mt-4">
+            By continuing, you agree to our Terms of Service and Privacy Policy
+          </p>
         </div>
-
-        <Button
-          onClick={handleGoogleSignIn}
-          className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
-          variant="outline"
-          disabled={loading}
-        >
-          <Chrome className="h-5 w-5" />
-          Continue with Google
-        </Button>
-
-        <div className="text-center mt-6">
-          <button
-            type="button"
-            onClick={() => setIsSignUp(!isSignUp)}
-            className="text-sm text-blue-600 hover:text-blue-800"
-          >
-            {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
-          </button>
-        </div>
-
-        <p className="text-xs text-gray-500 text-center mt-6">
-          By continuing, you agree to our Terms of Service and Privacy Policy
-        </p>
-      </div>
       </div>
       <Footer />
     </div>

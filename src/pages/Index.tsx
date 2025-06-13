@@ -165,11 +165,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50/50 via-purple-50/50 to-indigo-50/50">
+    <div className="min-vh-100 bg-gradient-to-br from-pink-50/50 via-purple-50/50 to-indigo-50/50">
       <BackgroundBlobs />
-      <div className="container mx-auto px-4 py-8 relative z-10">
+      <div className="container py-4 position-relative" style={{ zIndex: 10 }}>
         <Header activeTab={activeTab} onTabChange={setActiveTab} />
-        <main className="mt-8">
+        <main className="mt-4">
           {renderActiveTab()}
         </main>
         <Footer />
