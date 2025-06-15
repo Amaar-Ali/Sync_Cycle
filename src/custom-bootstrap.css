@@ -1,0 +1,98 @@
+/* Override Bootstrap's default blue colors with our pink color */
+:root {
+  --bs-blue: #E23670;
+  --bs-primary: #E23670;
+  --bs-primary-rgb: 226, 54, 112;
+  --bs-link-color: #E23670;
+  --bs-link-hover-color: #c92d5e;
+  --bs-btn-hover-bg: #c92d5e;
+  --bs-btn-active-bg: #c92d5e;
+}
+
+.btn-primary {
+  background-color: #E23670 !important;
+  border-color: #E23670 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #c92d5e !important;
+  border-color: #c92d5e !important;
+}
+
+.btn-outline-primary {
+  color: #E23670 !important;
+  border-color: #E23670 !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #E23670 !important;
+  color: white !important;
+}
+
+.text-primary {
+  color: #E23670 !important;
+}
+
+.bg-primary {
+  background-color: #E23670 !important;
+}
+
+.border-primary {
+  border-color: #E23670 !important;
+}
+
+/* Links */
+a {
+  color: #E23670;
+}
+
+a:hover {
+  color: #c92d5e;
+}
+
+/* Form controls */
+.form-control:focus,
+.form-check-input:focus {
+  border-color: #E23670;
+  box-shadow: 0 0 0 0.25rem rgba(226, 54, 112, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #E23670;
+  border-color: #E23670;
+}
+
+/* Pagination */
+.page-link {
+  color: #E23670;
+}
+
+.page-item.active .page-link {
+  background-color: #E23670;
+  border-color: #E23670;
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: #E23670;
+}
+
+/* List group */
+.list-group-item.active {
+  background-color: #E23670;
+  border-color: #E23670;
+}
+
+/* Nav tabs/pills */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #E23670;
+}
+
+.nav-tabs .nav-link.active {
+  color: #E23670;
+} 

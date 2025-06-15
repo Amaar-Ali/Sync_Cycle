@@ -29,7 +29,7 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
     <header className="mt-3">
       <div className="w-100 px-3 px-md-4 py-4 py-md-5 bg-gradient-to-r from-pink-50 to-purple-50 border-bottom border-pink-100 rounded-4 shadow">
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-between mb-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 leading-tight pb-2 mb-3 mb-md-0" style={{fontFamily: 'Poppins, Nunito, Inter, sans-serif'}}>SyncCycle</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-pink-300 leading-tight pb-2 mb-3 mb-md-0" style={{fontFamily: 'Poppins, Nunito, Inter, sans-serif'}}>SyncCycle</h1>
           <div className="d-flex align-items-center gap-3">
             <div className="d-flex align-items-center gap-2">
               <img 

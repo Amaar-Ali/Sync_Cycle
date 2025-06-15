@@ -42,7 +42,7 @@ const RELIEF_IDEAS: Record<string, { icon: React.ReactNode; ideas: string[] }> =
     ],
   },
   Acne: {
-    icon: <Smile className="text-blue-400" />,
+    icon: <Smile className="text-pink-400" />,
     ideas: [
       'Keep your skin clean and moisturized',
       'Avoid touching your face',

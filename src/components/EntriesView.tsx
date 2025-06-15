@@ -93,7 +93,7 @@ const EntriesView = ({ entries, onEntryClick }: EntriesViewProps) => {
                       {entry.flow.charAt(0).toUpperCase() + entry.flow.slice(1)} flow
                     </Badge>
                     {entry.isFirstDayOfCycle && (
-                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Badge variant="outline" className="bg-pink-50 text-pink-700 border-pink-200">
                         First day of cycle
                       </Badge>
                     )}

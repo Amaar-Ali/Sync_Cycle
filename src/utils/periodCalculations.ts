@@ -73,7 +73,7 @@ export const getPhaseColor = (phase: DayInfo['phase']): string => {
     case 'follicular':
       return 'bg-green-50 border-green-200 text-green-700';
     case 'ovulation':
-      return 'bg-blue-100 border-blue-300 text-blue-800';
+      return 'bg-pink-100 border-pink-300 text-pink-800';
     case 'luteal':
       return 'bg-yellow-50 border-yellow-200 text-yellow-700';
     case 'pms':
